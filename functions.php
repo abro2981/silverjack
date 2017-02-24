@@ -5,7 +5,13 @@ function getHand(){
     //add picked card to array and make sure not picked twice
     //php pop
     global $deck;
-    global $sum1, $sum2, $sum3, $sum4;
+    global $sum1 , $sum2, $sum3, $sum4;
+    global $scores;
+    $scores = array();
+    $sum1 = 0;
+    $sum2 = 0;
+    $sum3 = 0;
+    $sum4 = 0;
     $deck = array();
     //create deck
     for($i = 1; $i < 52;$i ++){
@@ -86,6 +92,7 @@ function getHand(){
     
     $player4[] = $tempValue;
     }
+    $scores = array($sum1,$sum2,$sum3,$sum4);
     
     // print_r($player1);
     // echo "<br/>";
@@ -160,10 +167,25 @@ function displayWinner(){
     //adds up scores and picks winner + points
     //$name contains names of players 
     //take max of all scores
-    $maxScore = $player1;
-    echo $player1;
-    
-}
+    global $players,$winner,$scores;
+    global $sum1, $sum2, $sum3, $sum4;
+    $players = array();
+    $scores = array($sum1,$sum2,$sum3,$sum4);
+    $max = 0;
+        //set scores
+        
+        for($i = 0; $i < 3; $i++){
+            if($scores[$i]>$max){
+               $max = $scores[$i];//set max of scores array to 
+            }
+        }
+         for($i = 0; $i < 3; $i++){
+            if($scores[$i]==$max){//if the current array score equals the max then winner
+               echo $max;
+               echo "<br/>";
+            }
+         }
+        }
 
 
 
