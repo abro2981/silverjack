@@ -104,9 +104,8 @@ function getHand(){
     
 }
 
-
+ //get image file per card and show for each player 1-4
 function displayHand(){
-    //get image file per card and show 
     global $player1, $player2, $player3, $player4;
     global $sum1, $sum2, $sum3, $sum4;
     for($i = 0; $i < count($player1); $i++){
@@ -114,34 +113,56 @@ function displayHand(){
     echo "<img src='./img/cards/$player1[$i].png'/>";
     }
     
-    echo "&nbsp" . $sum1 . "<br/>";
+    echo "<br/>";
     
     
     for($i = 0; $i < count($player2); $i++){
         
-    echo "<img src='../img/cards/$player2[$i].png'/>";
+    echo "<img src='./img/cards/$player2[$i].png'/>";
     }
-    echo "&nbsp" . $sum2 . "<br/>";
+   echo "<br/>";
     
     for($i = 0; $i < count($player3); $i++){
         
-    echo "<img src='../img/cards/$player3[$i].png'/>";
+    echo "<img src='./img/cards/$player3[$i].png'/>";
     }
-    echo "&nbsp" . $sum3 . "<br/>";
+   echo "<br/>";
     
     
     for($i = 0; $i < count($player4); $i++){
         
-    echo "<img src='../img/cards/$player4[$i].png'/>";
+    echo "<img src='./img/cards/$player4[$i].png'/>";
     }
-    echo "&nbsp" . $sum4 . "<br/>";
+   echo "<br/>";
     
 }
 
+//display image of player in random position
+//feel free to change the images; they are just placeholders
+function displayImage(){
+    $playerImages = array("Miguel" => "miguel", "SpongBob" => "spong","Brian" => "confuse", "Tao" => "tao");
+    global $name;
+    $name = array();
+    $index = 0;
+   while(count($playerImages) > 0){
+        $key = array_rand($playerImages); //get random key position
+        $value = $playerImages[$key]; //get value associated with key
+       
+     echo $key. "    ". "<img style='align: left'src='./img/$value.jpg'/>" . " <br/>"; //print player image
+    unset($playerImages[$key]); //remove key/value from playerImages
+    $name[$index] = $key; //store key into name array
+    $index++;
+}
+}
+
+
 function displayWinner(){
     //adds up scores and picks winner + points
+    //$name contains names of players 
     
     
 }
+
+
 
 ?>
