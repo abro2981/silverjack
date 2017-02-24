@@ -99,6 +99,7 @@ function getHand(){
     echo "<br/>";
     
     echo $sum1.$sum2.$sum3.$sum4;
+    //4 if statements if between 1-13 first suit etc
     
 }
 
