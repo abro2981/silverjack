@@ -48,9 +48,4 @@ function displayWinner(){
     
 }
 
-
-
-
-
-
 ?>
