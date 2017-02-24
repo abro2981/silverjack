@@ -36,6 +36,8 @@ include 'functions.php';
         <br />
         <div>
             <h3>DISPLAY WINNER HERE</h3>
+            <!-- Function for displaying winner -->
+            <?=displayWinner()?>
         </div>
         
         <div>

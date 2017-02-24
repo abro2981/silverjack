@@ -159,7 +159,9 @@ function displayImage(){
 function displayWinner(){
     //adds up scores and picks winner + points
     //$name contains names of players 
-    
+    //take max of all scores
+    $maxScore = $player1;
+    echo $player1;
     
 }
 
