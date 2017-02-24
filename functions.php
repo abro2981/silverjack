@@ -147,7 +147,7 @@ function displayHand(){
 //display image of player in random position
 //feel free to change the images; they are just placeholders
 function displayImage(){
-    $playerImages = array("Miguel" => "miguel", "SpongBob" => "spong","Brian" => "confuse", "Tao" => "tao");
+    $playerImages = array("Miguel" => "miguel", "SpongeBob" => "spong","Brian" => "confuse", "Tao" => "tao");
     global $name;
     $name = array();
     $index = 0;
