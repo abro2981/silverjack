@@ -169,11 +169,13 @@ function displayWinner(){
     //take max of all scores
     global $players,$winner,$scores;
     global $sum1, $sum2, $sum3, $sum4;
-    $players = array();
+    $players = array("Miguel","Brian","Tao","SpongeBob");
     $scores = array($sum1,$sum2,$sum3,$sum4);
     $max = 0;
+    $distance;
+    $maxDistance;
         //set scores
-        
+    $distance = 42 -$scores[0];    
         for($i = 0; $i < 3; $i++){
             if($scores[$i]>$max){
                $max = $scores[$i];//set max of scores array to 
@@ -181,11 +183,12 @@ function displayWinner(){
         }
          for($i = 0; $i < 3; $i++){
             if($scores[$i]==$max){//if the current array score equals the max then winner
-               echo $max;
+               
+               echo "the winner is ". $players[0] . $scores[$i] ." points.";
                echo "<br/>";
             }
          }
-        }
+    }
 
 
 
