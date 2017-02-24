@@ -1,0 +1,12 @@
+.outerlayer{
+    margin: 0 auto;
+    border: 5px black solid;
+    text-align: center;
+    width: 50%;
+    height: 700px;
+    border-radius: 10px;
+}
+
+.innerlayer{
+    text-align: center;
+}

@@ -9,16 +9,21 @@ include 'functions.php';
         <title>Lab 2: LED Board </title>
         
         <style>
-            
+            @import url('./css/style.css');
         </style>
     </head>
     <body>
         
-        <h1>LED Board</h1>
         
+        <div class="outerlayer">
+            <h1>LED Board</h1>
+            <div class="innerlayer">
         <?=getHand()?>
-        
+        <?=displayHand()?>
+        </div>
         <br />
+        
+        </div>
         
         
         
