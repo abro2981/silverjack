@@ -37,7 +37,7 @@ include 'functions.php';
         <div>
             <h3>DISPLAY WINNER HERE</h3>
             <!-- Function for displaying winner -->
-            <?=displayWinner()?>
+            <h3><?=displayWinner()?></h3>
         </div>
         
         <div>

@@ -167,29 +167,35 @@ function displayWinner(){
     //adds up scores and picks winner + points
     //$name contains names of players 
     //take max of all scores
-    global $players,$winner,$scores;
-    global $sum1, $sum2, $sum3, $sum4;
-    $players = array("Miguel","Brian","Tao","SpongeBob");
+    global $sum1, $sum2, $sum3, $sum4, $name;
     $scores = array($sum1,$sum2,$sum3,$sum4);
     $max = 0;
-    $distance;
-    $maxDistance;
-        //set scores
-    $distance = 42 -$scores[0];    
-        for($i = 0; $i < 3; $i++){
-            if($scores[$i]>$max){
-               $max = $scores[$i];//set max of scores array to 
+    $index = 0;
+    $TotalSum = 0;
+    $isTieGame = false;
+    
+        for($i = 0; $i < count($scores); $i++){
+            if($scores[$i]>$max && $scores[$i] <= 42){
+               $max = $scores[$i];
+               $index = $i;
+            }
+            else if($score[$i] == $max && $scores[$i] <= 42){ //if tie game set tieGame to true
+               
+                $tieGame = true;
             }
         }
-         for($i = 0; $i < 3; $i++){
-            if($scores[$i]==$max){//if the current array score equals the max then winner
-               
-               echo "the winner is ". $players[0] . $scores[$i] ." points.";
-               echo "<br/>";
-            }
+        
+         for($i = 0; $i < count($scores); $i++){ //total all scores
+          
+          $TotalSum += $scores[$i];
          }
+         if($tieGame){
+             echo "Tie Game. Please play again.";
+         }
+         else{
+         echo $name[$index] . " wins " . $TotalSum . " points! ";
     }
-
+}
 
 
 ?>
